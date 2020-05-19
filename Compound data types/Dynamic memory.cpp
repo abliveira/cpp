@@ -3,7 +3,7 @@ using namespace std;
 
 /*  Na linguagem C++, a memória é dividida em duas partes:
         Stack: Espaço de memória de programa definido no momento da compilação
-        Heap: Espaço de memória de programa não utilizado que é usadado para alocar variáveis dinamicamente
+        Heap: Espaço de memória de programa não utilizado que é usado para alocar variáveis dinamicamente
             na memória durante o tempo de execução do programa
     Quando não se sabe ao certo quanto de memória será usado durante a execução do programa, como a dependência
         de entrada pelo usuário, pode-se reservar dinamicamente a memória */
@@ -11,7 +11,7 @@ using namespace std;
 int main () {
 
     // A alocação de memória é feita com ponteiros. O ponteiro é armazenado na memória stack
-    // Como ainda não há um valor, pode-se inicializa-lo com NULL
+    // Como ainda não há um valor, pode-se inicializá-lo com NULL
     double* p  = NULL;
     
     cout << "Endereço apontado por p: " << p << endl;
