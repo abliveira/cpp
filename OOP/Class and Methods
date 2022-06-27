@@ -11,7 +11,11 @@ using namespace std;
 class Car {        // The class
 
     /*The public keyword is an access specifier, which specifies that members (attributes and methods)
-    of the class are accessible from outside the class*/
+    of the class are accessible from outside the class
+    
+    If no access specifier is defined, all members of a class are set to private by default. 
+    
+    */
   public:              // Access specifier
     string brand;   
     string model;
