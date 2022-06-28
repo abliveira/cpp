@@ -1,5 +1,12 @@
 /*
 https://www.w3schools.com/cpp/cpp_oop.asp
+
+A class in C++ is the building block that leads to Object-Oriented programming. It 
+is a user-defined data type, which holds its own data members and member functions,
+which can be accessed and used by creating an instance of that class
+
+An Object is an instance of a Class. When a class is defined, no memory is allocated 
+but when it is instantiated (i.e. an object is created) memory is allocated.
 */
 
 #include <iostream>
