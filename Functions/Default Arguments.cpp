@@ -1,4 +1,4 @@
-#include<iostream>    // cout
+#include <iostream>    // cout
 using namespace std; 
   
 // Uma função pode conter valores padrões para os seus argumentos,
