@@ -23,6 +23,10 @@ A destructor function is called automatically when the object goes out of scope:
 (3) a block containing local variables ends 
 (4) a delete operator is called  
 
+Destructors can be very useful for releasing resources before coming out of the program. 
+This can include closing files, releasing memory, and so on.
+A destructor can't return a value or take any parameters
+
 */
 
 #include <iostream>
@@ -81,6 +85,7 @@ class Car2 {        // The class
     string model;  // Attribute
     int year;      // Attribute
     Car2(string x, string y, int z); // Constructor declaration
+    ~Car2();
 };
 
 // Constructor definition outside the class
@@ -88,6 +93,9 @@ Car2::Car2(string x, string y, int z) {
   brand = x;
   model = y;
   year = z;
+}
+
+Car2::~Car2(){
 }
 
 
