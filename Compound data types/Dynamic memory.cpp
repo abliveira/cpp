@@ -25,6 +25,8 @@ int main () {
     cout << "Valor apontado por p: " << *p << endl;
     
     // Quando não for mais necessária, a memória alocada pode ser liberada com o operador delete
+    // No entanto, delete libera a memória alocada para a variável, mas não exclui o ponteiro em si
+    //  pois o ponteiro é armazenado na stack
     delete p;
     
     // O ponteiro no entanto, ainda guarda o valor até ser novamente usado
