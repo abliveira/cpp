@@ -1,10 +1,13 @@
 /*
 https://www.geeksforgeeks.org/inheritance-in-c/?ref=lbp
 
-Inheritance (Herança) é um dos pontos chave de programação orientada a objetos (POO). Ela fornece meios de promover a extensibilidade do código, a reutilização e uma maior coerência lógica no modelo de implementação.
+Inheritance (Herança) é um dos pontos chave de programação orientada a objetos (POO). Ela fornece meios de promover
+a extensibilidade do código, a reutilização e uma maior coerência lógica no modelo de implementação.
 Inheritance é a capacidade de uma classe de derivar propriedades e características de outra classe.
-The new class created is called “derived class” or “child class” and the existing class is known as the “base class” or “parent class”.
-When we say derived class inherits the base class, it means, the derived class inherits all the properties of the base class, without changing the properties of base class.
+The new class created is called “derived class” or “child class” and the existing class is known as the “base class”
+or “parent class”.
+When we say derived class inherits the base class, it means, the derived class inherits all the properties of the
+base class, without changing the properties of base class.
 - Sub Class: The class that inherits properties from another class is called Subclass or Derived Class. 
 - Super Class: The class whose properties are inherited by a subclass is called Base Class or Superclass.
 
@@ -17,9 +20,11 @@ Tipos de Inheritance
 2. Multiple Inheritance: A class can inherit from more than one class. A and B -> C
 3. Multilevel Inheritance: In this type of inheritance, a derived class is created from another derived class. A -> B -> C
 4. Hierarchical Inheritance: In this type of inheritance, more than one subclass is inherited from a single base class. A -> B and C
-5. Hybrid (Virtual) Inheritance: Hybrid Inheritance is implemented by combining more than one type of inheritance. For example: Combining Hierarchical inheritance and Multiple Inheritance. 
+5. Hybrid (Virtual) Inheritance: Hybrid Inheritance is implemented by combining more than one type of inheritance. 
+For example: Combining Hierarchical inheritance and Multiple Inheritance. 
 6. A special case of hybrid inheritance: Multipath inheritance: 
-A derived class with two base classes and these two base classes have one common base class is called multipath inheritance. Ambiguity can arise in this type of inheritance which need to be handled by a special operator
+A derived class with two base classes and these two base classes have one common base class is called multipath inheritance.
+Ambiguity can arise in this type of inheritance which need to be handled by a special operator
 
 Access specifier inheritance
 Se for público, e declarado como:
@@ -205,8 +210,10 @@ class Apple : public Fruit {
 // Demonstrating ambiguity in Multipath Inheritance with scope resolution specifier
  
  /*
-In the above example, both ClassB and ClassC inherit ClassA, they both have a single copy of ClassA. However Class-D inherits both ClassB and ClassC, therefore Class-D has two copies of ClassA, one from ClassB and another from ClassC. 
-If we need to access the data member of ClassA through the object of Class-D, we must specify the path from which a will be accessed, whether it is from ClassB or ClassC, bcoz compiler can’t differentiate between two copies of ClassA in Class-D.
+In the above example, both ClassB and ClassC inherit ClassA, they both have a single copy of ClassA. 
+However Class-D inherits both ClassB and ClassC, therefore Class-D has two copies of ClassA, one from ClassB and another from ClassC. 
+If we need to access the data member of ClassA through the object of Class-D, we must specify the path from which a will be accessed,
+whether it is from ClassB or ClassC, bcoz compiler can’t differentiate between two copies of ClassA in Class-D.
 */
 class ClassA {
     public:
@@ -231,10 +238,13 @@ class ClassD : public ClassB, public ClassC {
 
 // Example 7 ---------------------------------------------------------
 // demonstrating ambiguity in Multipath Inheritance with virtual base class
+// https://www.geeksforgeeks.org/virtual-base-class-in-c/
 
 /*
-Virtual base classes in C++ are used as a way of preventing multiple instances of a given class from appearing in an inheritance hierarchy when using multiple inheritances.
-When a class is specified as a virtual base class, it prevents duplication of its data members. Only one copy of its data members is shared by all the base classes that use the virtual base class.
+Virtual base classes in C++ are used as a way of preventing multiple instances of a given class from
+appearing in an inheritance hierarchy when using multiple inheritances.
+When a class is specified as a virtual base class, it prevents duplication of its data members.
+Only one copy of its data members is shared by all the base classes that use the virtual base class.
 */
 
 class ClassX
