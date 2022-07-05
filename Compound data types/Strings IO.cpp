@@ -34,7 +34,7 @@ int main()
 
     // Basic Output with end-of-line
     int var = 42;
-    cout<<"Hello World: " << var << endl << "Fim" << endl;
+    cout <<"Hello World: " << var << endl << "Fim" << endl;
 
     // Basic input
     string fullName;
@@ -56,14 +56,17 @@ int main()
 
     cout << "Type your full name: ";
     getline (cin, fullName);
-    cout << "Your name is: " << fullName;
-
-    string name;
-    // Write "Hello, world!" and await user response
-    cout << "Hello, " << name << "!" << endl;
-    
-
+    cout << "Hello, " << fullName << "!" << endl;
     cout << endl;
+
+    // Multiple Inputs and Outputs using cout and cin
+    int power;
+    string color;
+    int year;
+    cout << "Type between spaces the power, color and year of the car: ";
+    cin >> power >> color >> year;
+    cout << power << " " << color << " " << year << endl;
+
 
     // Declaring string
     string str;
