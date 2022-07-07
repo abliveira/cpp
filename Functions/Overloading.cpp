@@ -13,10 +13,15 @@ void printNumber(int x) {
 void printNumber(float x) {
     cout << "Prints a float: " << x << endl;
 }
+void printNumber(int x, int y) {
+    cout << "Prints a float: " << x << endl;
+}
 
 int main() {
     int a = 16;
     float b = 54.541;
+    int c = 10;
     printNumber(a);
     printNumber(b);
+    printNumber(a, c);
 }
