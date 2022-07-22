@@ -15,7 +15,7 @@ Por exemplo, a classe Carro tem os métodos Motor, Freios e Rodas.
 A classe derivada Sedan teria essas classes mais o método PortaMalas.
 A classe derivada Pickup teria essas classes mais o método Caçamba.
 
-Tipos de Inheritance
+Tipos de Inheritance -----------------------------------------------------------
 1. Single Inheritance: A class is allowed to inherit from only one class. A -> B
 2. Multiple Inheritance: A class can inherit from more than one class. A and B -> C
 3. Multilevel Inheritance: In this type of inheritance, a derived class is created from another derived class. A -> B -> C
@@ -26,7 +26,7 @@ For example: Combining Hierarchical inheritance and Multiple Inheritance.
 A derived class with two base classes and these two base classes have one common base class is called multipath inheritance.
 Ambiguity can arise in this type of inheritance which need to be handled by a special operator
 
-Access specifier inheritance
+Access specifier inheritance -----------------------------------------------------
 Se for público, e declarado como:
     - Público, é herdado e continua público
     - Protegido, é herdado e passa a ser protegido
@@ -39,6 +39,13 @@ Se for público, e declarado como:
     - Público, não é herdado
     - Protegido, não é herdado
     - Privado, não é herdado
+
+Constructor e Destructor -----------------------------------------------------------
+Ao herdar classes, o construtor e o destruidor da classe base não são herdados.
+No entanto, eles são chamados quando um objeto da classe derivada é criado/excluído.
+Primeiramente é chamado o construtor da classe BASE e então o construtor da classe DERIVADA.
+No final, é chamado o destruidor da classe DERIVADA e então o destruidor da classe BASE.
+
 */
  
 #include<iostream>
@@ -76,7 +83,6 @@ class D : private A // 'private' is default for classes
     // y is private
     // z is not accessible from D
 };
-
 
 
 
@@ -271,6 +277,32 @@ class ClassZ : public ClassW, public ClassY
     int d;
 };
 
+
+// Example 8 ---------------------------------------------------------
+// Constructor and Destructor inheritance
+class Mother {
+    public:
+        Mother() 
+        {
+            cout <<"Mother ctor"<<endl;
+        }
+        ~Mother()
+        {
+            cout <<"Mother dtor"<<endl;
+        }
+};
+
+class Daughter: public Mother {
+    public:
+        Daughter()
+        {
+            cout <<"Daughter ctor"<<endl;
+        }
+        ~Daughter()
+        {
+            cout <<"Daughter dtor"<<endl;
+        }
+};
  
 int main() {
 
@@ -358,6 +390,7 @@ int main() {
     cout << "Z.b : " << obj7.b << endl;
     cout << "Z.c : " << obj7.c << endl;
     cout << "Z.d: " << obj7.d << '\n';
+    cout << endl;
 
     // Nas outras classes derivadas Y e W, a múltiplas instâncias de X continuam existindo 
     ClassW obj8;
@@ -370,5 +403,10 @@ int main() {
     cout << "Y.a : " << obj9.a << endl;
     cout << "Z.a : " << obj7.a << endl;
 
+
+    // Example 8 - Constructor and Destructor inheritance ----------------------------------
+
+    cout << "Example 8:" << endl;
+    Daughter m; // Chama o Constructor da classe base e também da herdada 
     return 0;
 }

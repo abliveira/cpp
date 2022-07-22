@@ -27,6 +27,12 @@ Destructors can be very useful for releasing resources before coming out of the 
 This can include closing files, releasing memory, and so on.
 A destructor can't return a value or take any parameters
 
+Constructor e Destructor -----------------------------------------------------------
+Ao herdar classes, o construtor e o destruidor da classe base não são herdados.
+No entanto, eles são chamados quando um objeto da classe derivada é criado/excluído.
+Primeiramente é chamado o construtor da classe BASE e então o construtor da classe DERIVADA.
+No final, é chamado o destruidor da classe DERIVADA e então o destruidor da classe BASE.
+
 */
 
 #include <iostream>
@@ -99,6 +105,32 @@ Car2::~Car2(){
 }
 
 
+// Constructor and Destructor inheritance
+
+class Mother {
+    public:
+        Mother() 
+        {
+            cout <<"Mother ctor"<<endl;
+        }
+        ~Mother()
+        {
+            cout <<"Mother dtor"<<endl;
+        }
+};
+
+class Daughter: public Mother {
+    public:
+        Daughter()
+        {
+            cout <<"Daughter ctor"<<endl;
+        }
+        ~Daughter()
+        {
+            cout <<"Daughter dtor"<<endl;
+        }
+};
+
 
 int main() {
     
@@ -122,6 +154,12 @@ int main() {
   // Print values
   cout << carObj3.brand << " " << carObj3.model << " " << carObj3.year << "\n";
   cout << carObj4.brand << " " << carObj4.model << " " << carObj4.year << "\n";
-  
+  cout << endl;
+
+
+  // Example - Constructor and Destructor inheritance -------------------------------
+  Daughter m; // Chama o Constructor da classe base e também da herdada 
+  cout << endl;
+
   return 0;
 }
