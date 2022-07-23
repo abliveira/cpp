@@ -25,6 +25,54 @@ In C++, polymorphism is mainly divided into two types:
         member functions of the base class. That base function is said to be overridden. 
 
 
+Virtual Functions
+https://www.geeksforgeeks.org/virtual-function-cpp/
+
+OBS: Virtual Classes em OOP/Inheritance.cpp
+
+A virtual function is a member function which is declared within a base class 
+and is re-defined (overridden) by a derived class. When you refer to a derived 
+class object using a pointer or a reference to the base class, you can call a 
+virtual function for that object and execute the derived class’s version of the function. 
+
+- Virtual functions ensure that the correct function is called for an object, regardless 
+    of the type of reference (or pointer) used for function call.
+- They are mainly used to achieve Runtime polymorphism
+- Functions are declared with a virtual keyword in base class.
+- The resolving of function call is done at runtime.
+
+Rules for Virtual Functions
+    Virtual functions cannot be static.
+    A virtual function can be a friend function of another class.
+    Virtual functions should be accessed using pointer or reference of base class type 
+        to achieve runtime polymorphism.
+    The prototype of virtual functions should be the same in the base as well as derived class.
+    They are always defined in the base class and overridden in a derived class. It is not 
+        mandatory for the derived class to override (or re-define the virtual function), in
+        that case, the base class version of the function is used.
+    A class may have virtual destructor but it cannot have a virtual constructor.
+
+Pure Virtual Function
+In some situations you'd want to include a virtual function in a base class so that it may be
+redefined in a derived class to suit the objects of that class, but that there is no meaningful
+definition you could give for the function in the base class.
+The virtual member functions without definition are known as pure virtual functions. They 
+basically specify that the derived classes define that function on their own.
+The = 0 tells the compiler that the function has no body.
+A pure virtual function basically defines, that the derived classes will have that function
+defined on their own.
+Every derived class inheriting from a class with a pure virtual function must override that
+function.
+If the pure virtual function is not overridden in the derived class, the code fails to compile
+and results in an error when you try to instantiate an object of the derived class.
+
+Abstract Classes
+You cannot create objects of the base class with a pure virtual function.
+These classes are called abstract. They are classes that can only be used as base classes, 
+and thus are allowed to have pure virtual functions.
+It can be used to create pointers and take advantage of all its polymorphic abilities.
+
+
 olhar: 
 https://www.geeksforgeeks.org/operator-overloading-c/?ref=lbp
 https://www.geeksforgeeks.org/virtual-functions-and-runtime-polymorphism-in-cpp/
@@ -90,7 +138,75 @@ class derived : public base {
 };
 
 
+// Example
 
+class Enemy {
+    protected: 
+        int attackPower;
+    public:
+        void setAttackPower(int a){
+            attackPower = a;
+        }
+};
+
+class Ninja: public Enemy {
+    public:
+        void attack() {
+            cout << "Ninja! - "<<attackPower<<endl;
+        }
+};
+
+class Monster: public Enemy {
+    public:
+        void attack() {
+            cout << "Monster! - "<<attackPower<<endl;
+        }
+};
+
+
+// Example - Virtual Function
+
+class Vehicle {
+    public:
+        virtual void accelerate() {
+            cout << "accelerate something!"<<endl;
+        }
+};
+
+class Car: public Vehicle {
+    public:
+        void accelerate() {
+            cout << "accelerate car!"<<endl;
+  }
+};
+
+class Truck: public Vehicle {
+    public:
+        void accelerate() {
+            cout << "accelerate truck!"<<endl;
+        }
+};
+
+
+// Example - Pure Virtual Function
+class Fruit {
+    public:
+        virtual void eat() = 0;
+};
+
+class Apple: public Fruit {
+    public:
+        void eat() {
+            cout << "Apple!"<<endl;
+        }
+};
+
+class Orange: public Fruit {
+    public:
+        void eat() {
+            cout << "Orange!"<<endl;
+        }
+};
 
 int main() {
 
@@ -116,7 +232,41 @@ int main() {
       
     // Non-virtual function, binded at compile time
     bptr->show();
+    // We would have achieved the same result by calling the functions directly on the objects.
+    // However, it's faster and more efficient to use pointers.
 
+    // Example
+    Ninja n;
+    Monster m;
+    Enemy *e1 = &n;
+    Enemy *e2 = &m;
+
+    e1->setAttackPower(20);
+    e2->setAttackPower(80);
+
+    n.attack();
+    m.attack();
+
+    // Example - Virtual Function
+    Car o;
+    Truck p;
+    Vehicle *e3 = &o;
+    Vehicle *e4 = &p;
+
+    // This example serves to demonstrate the concept of polymorphism; 
+    // We are using pointers to call the same accelerate() function, and generating different results.
+    e3->accelerate();
+    e4->accelerate();
+
+
+    // Example - Pure Virtual Function
+    Apple j;
+    Orange k;
+    Fruit *e5 = &j;
+    Fruit *e6 = &k;
+
+    e5->eat();
+    e6->eat();
 
     return 0;
 }
