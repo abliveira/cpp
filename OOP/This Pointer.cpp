@@ -1,18 +1,16 @@
 /*
-Every object in C++ has access to its own address through an important
-pointer called this pointer. The this pointer is an implicit parameter
-to all member functions. Therefore, inside a member function, this may
-be used to refer to the invoking object.
+https://www.geeksforgeeks.org/this-pointer-in-c/
+
+Every object in C++ has access to its own address through a called this
+pointer. The this pointer is an implicit parameter to all member functions.
+Inside a member function, this maybe used to refer to the invoking object.
 
 Friend functions do not have a this pointer, because friends are not
 members of a class. Only member functions have a this pointer.
 
-To understand ‘this’ pointer, it is important to know how objects look at
-functions and data members of a class.
-- Each object gets its own copy of the data member.
-- All-access the same function definition as present in the code segment.
-Meaning each object gets its own copy of data members and all objects share a
-single copy of member functions.
+It is important to know how objects look at functions and data members of
+a class: Each object gets its own copy of data members and all objects share
+a single copy of member functions.
 
 So, to  proper access and updated data members are accessed, the compiler 
 supplies an implicit pointer along with the names of the functions as ‘this’.
@@ -31,6 +29,7 @@ The this keyword has an important role in operator overloading.
 
 Following are the situations where ‘this’ pointer is used:
 1) When local variable’s name is same as member’s name
+2) To return reference to the calling object
 */
 
 #include <iostream>
