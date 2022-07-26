@@ -8,8 +8,6 @@ which can be accessed and used by creating an instance of that class
 An Object is an instance of a Class. When a class is defined, no memory is allocated 
 but when it is instantiated (i.e. an object is created) memory is allocated.
 
-
-
 When working with an object, use the dot member selection operator (.).
 When working with a pointer to the object, use the arrow member selection operator (->).
 

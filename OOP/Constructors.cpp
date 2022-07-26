@@ -3,25 +3,27 @@
 A constructor in C++ is a special method that is automatically called when an object of a 
 class is created.
 
-To create a constructor, use the same name as the class, followed by parentheses ():
-Note: The constructor has the same name as the class, it is always public, and it does 
-not have any return value.
+To create a constructor, use the same name as the class, followed by parentheses ().
+It can be declared outside the class. In this case, use the name of the class followed
+by :: and the name of the constructor and it's arguments.
 
-Construct 
+A constructor:
+1- Is an automatic function of a class.
+2- It will be executed upon creating an object of that class.
+3- It does not have type.
+4- It does not return any value.
+5- It has the same name as the class.
+6- It is always public
+7- It might have input like a function.
+8- We can have several constructors by overloading. 
 
-1- A constructor is an automatic function of a class.
-2- A constructor will be executed upon creating an object of that class.
-3- A constructor does not have type.
-4- A constructor does not return any value.
-5- A constructor has the same name as the class.
-6- A constructor might have input like a function.
-7- We can have several constructors by overloading. 
-
+Destructors
 A destructor function is called automatically when the object goes out of scope: 
 (1) the function ends 
 (2) the program ends 
 (3) a block containing local variables ends 
 (4) a delete operator is called  
+They are declared in the same way of constructors, but using ~ befores its name.
 
 Destructors can be very useful for releasing resources before coming out of the program. 
 This can include closing files, releasing memory, and so on.
@@ -36,8 +38,10 @@ No final, é chamado o destruidor da classe DERIVADA e então o destruidor da cl
 */
 
 #include <iostream>
-
 using namespace std;
+
+
+// Example - Implementation of Constructor and Destructor inside the class
 
 class MyClass1 {     // The class
   public:           // Access specifier
@@ -45,22 +49,17 @@ class MyClass1 {     // The class
       cout << "Hello World!" << endl;
     }
     // De modo inverso, é possível criar um Destructor que rodará quando a Objeto for destruído
-    ~MyClass1()
-          {
-              cout<<"Destructor executed";
-          }
+    ~MyClass1() {
+      cout<<"Destructor executed";
+    }
 };
-
 
 
 /*
 Constructors can also take parameters (just like regular functions), which can be 
 useful for setting initial values for attributes.
-
-The following class have brand, model and year attributes, and a constructor with 
-different parameters. Inside the constructor we set the attributes equal to the 
-constructor parameters (brand=x, etc). When we call the constructor (by creating 
-an object of the class), we pass parameters to the constructor, which will set the 
+When we call the constructor (by creating  an object of the class), 
+we pass parameters to the constructor, which will set the 
 value of the corresponding attributes to the same:
 */
 
@@ -75,7 +74,6 @@ class Car {        // The class
       year = z;
     }
 };
-
 
 
 /* Just like functions, constructors can also be defined outside the class. 
@@ -105,28 +103,24 @@ Car2::~Car2(){
 }
 
 
-// Constructor and Destructor inheritance
+// Example - Constructor and Destructor inheritance
 
 class Mother {
     public:
-        Mother() 
-        {
+        Mother() {
             cout <<"Mother ctor"<<endl;
         }
-        ~Mother()
-        {
+        ~Mother() {
             cout <<"Mother dtor"<<endl;
         }
 };
 
 class Daughter: public Mother {
     public:
-        Daughter()
-        {
+        Daughter() {
             cout <<"Daughter ctor"<<endl;
         }
-        ~Daughter()
-        {
+        ~Daughter() {
             cout <<"Daughter dtor"<<endl;
         }
 };
@@ -134,30 +128,32 @@ class Daughter: public Mother {
 
 int main() {
     
-  MyClass1 myObj1;    // Create an object of MyClass (this will call the constructor)
-  
-  
-  
+  // Example
+  // Create an object of MyClass (this will call the constructor and destructor)
+  MyClass1 myObj1;    
+
+
+  // Example
   // Create Car objects and call the constructor with different values
   Car carObj1("BMW", "X5", 1999);
   Car carObj2("Ford", "Mustang", 1969);
 
-  // Print values
   cout << carObj1.brand << " " << carObj1.model << " " << carObj1.year << "\n";
   cout << carObj2.brand << " " << carObj2.model << " " << carObj2.year << "\n";
+
   
-  
-  
+  // Example
+  // Create Car objects of a class with a constructor outside the class
   Car2 carObj3("BMW", "X5", 1999);
   Car2 carObj4("Ford", "Mustang", 1969);
 
-  // Print values
   cout << carObj3.brand << " " << carObj3.model << " " << carObj3.year << "\n";
   cout << carObj4.brand << " " << carObj4.model << " " << carObj4.year << "\n";
   cout << endl;
 
 
-  // Example - Constructor and Destructor inheritance -------------------------------
+  // Example - Constructor and Destructor inheritance
+
   Daughter m; // Chama o Constructor da classe base e também da herdada 
   cout << endl;
 

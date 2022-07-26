@@ -25,7 +25,7 @@ In C++, polymorphism is mainly divided into two types:
         member functions of the base class. That base function is said to be overridden. 
 
 
-Virtual Functions
+Virtual Functions ------------------------------------------------------------------
 https://www.geeksforgeeks.org/virtual-function-cpp/
 
 OBS: Virtual Classes em OOP/Inheritance.cpp
@@ -39,46 +39,36 @@ virtual function for that object and execute the derived class’s version of th
     of the type of reference (or pointer) used for function call.
 - They are mainly used to achieve Runtime polymorphism
 - Functions are declared with a virtual keyword in base class.
-- The resolving of function call is done at runtime.
 
 Rules for Virtual Functions
-    Virtual functions cannot be static.
-    A virtual function can be a friend function of another class.
-    Virtual functions should be accessed using pointer or reference of base class type 
+    - Virtual functions cannot be static.
+    - A virtual function can be a friend function of another class.
+    - Virtual functions should be accessed using pointer or reference of base class type 
         to achieve runtime polymorphism.
-    The prototype of virtual functions should be the same in the base as well as derived class.
-    They are always defined in the base class and overridden in a derived class. It is not 
-        mandatory for the derived class to override (or re-define the virtual function), in
-        that case, the base class version of the function is used.
-    A class may have virtual destructor but it cannot have a virtual constructor.
+    - The prototype of virtual functions should be the same in the base as well as derived class.
+    - They are always defined in the base class and overridden in a derived class. It is not 
+        mandatory for the derived class to override, in that case, the base class version
+        of the function is used.
+    - A class may have virtual destructor but it cannot have a virtual constructor.
 
-Pure Virtual Function
-In some situations you'd want to include a virtual function in a base class so that it may be
-redefined in a derived class to suit the objects of that class, but that there is no meaningful
+Pure Virtual Function ------------------------------------------------------------------
+Pure virtual functions are member functions without definition. They basically specify that
+the derived classes define that function on their own, but that there is no meaningful
 definition you could give for the function in the base class.
-The virtual member functions without definition are known as pure virtual functions. They 
-basically specify that the derived classes define that function on their own.
-The = 0 tells the compiler that the function has no body.
-A pure virtual function basically defines, that the derived classes will have that function
-defined on their own.
 Every derived class inheriting from a class with a pure virtual function must override that
-function.
-If the pure virtual function is not overridden in the derived class, the code fails to compile
-and results in an error when you try to instantiate an object of the derived class.
+function. If the pure virtual function is not overridden in the derived class, the code fails
+to compile and results in an error when you try to instantiate an object of the derived class.
+The = 0 tells the compiler that the function has no body.
 
-Abstract Classes
+Abstract Classes ------------------------------------------------------------------
 You cannot create objects of the base class with a pure virtual function.
 These classes are called abstract. They are classes that can only be used as base classes, 
 and thus are allowed to have pure virtual functions.
 It can be used to create pointers and take advantage of all its polymorphic abilities.
 
 
-olhar: 
-https://www.geeksforgeeks.org/operator-overloading-c/?ref=lbp
-https://www.geeksforgeeks.org/virtual-functions-and-runtime-polymorphism-in-cpp/
+olhar:  ------------------------------------------------------------------
 https://betterprogramming.pub/inheritance-vs-composition-2fa0cdd2f939
-- tem parte sobre composition em polimorfismo
-
 
 */ 
 
@@ -218,7 +208,8 @@ int main() {
     // In the above example, the operator ‘+’ is overloaded. 
     // Usually, this operator is used to add two numbers (integers or
     // floating point numbers), but here the operator is made to perform
-    // the addition of two imaginary or complex numbers.
+    // a new type of operation which we designed, that is the the addition
+    // of two imaginary or complex numbers.
 
 
     // Function overriding -------------------------------------------------
@@ -253,7 +244,6 @@ int main() {
     Vehicle *e3 = &o;
     Vehicle *e4 = &p;
 
-    // This example serves to demonstrate the concept of polymorphism; 
     // We are using pointers to call the same accelerate() function, and generating different results.
     e3->accelerate();
     e4->accelerate();

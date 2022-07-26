@@ -1,26 +1,38 @@
 /*
 https://www.geeksforgeeks.org/object-composition-delegation-in-c-with-examples/
-https://betterprogramming.pub/inheritance-vs-composition-2fa0cdd2f939
 
 In C++, object composition involves using classes as member variables in other classes.
 
-In object-oriented programming languages, object composition is used for objects that have a “has-a” relationship with each other. Therefore, the complex object is called the whole or a parent object whereas a simpler object is often referred to as a child object.
+In object-oriented programming languages, object composition is used for objects that have
+a “has-a” relationship with each other. Therefore, the complex object is called the whole
+or a parent object whereas a simpler object is often referred to as a child object.
 
-In general, composition serves to keep each individual class relatively simple, straightforward, and focused on performing one task. It also enables each sub-object to be self-contained, allowing for reusability (we can use the Birthday class within various other classes).
+In general, composition serves to keep each individual class relatively simple,
+straightforward, and focused on performing one task. It also enables each sub-object
+to be self-contained, allowing for reusability (we can use the Birthday class within
+various other classes).
 
-Composition is in contrast to inheritance, it enables the creation of complex types by combining objects (components) of other types, rather than inheriting from a base or parent class. To put it simply, composition contains instances of other classes that implement the desired functionality.
+Composition is in contrast to inheritance, it enables the creation of complex types by
+combining objects (components) of other types, rather than inheriting from a base or parent
+class. To put it simply, composition contains instances of other classes that implement the
+desired functionality.
 
 The main difference between inheritance and composition is in the relationship between objects.
 
 Inheritance: “is a.” E.g. The car is a vehicle.
 Composition: “has a.” E.g. The car has a steering wheel.
-Inheritance is known as the tightest form of coupling in object-oriented programming. Changing a base class can cause unwanted side effects on its subclasses or even all over the codebase.
+Inheritance is known as the tightest form of coupling in object-oriented programming. Changing
+a base class can cause unwanted side effects on its subclasses or even all over the codebase.
 
-Composition is a far looser coupling. Combining with Dependency Injection (here), it brings more flexibility and also allows us to change runtime behavior.
+Composition is a far looser coupling. Combining with Dependency Injection (here), it brings
+more flexibility and also allows us to change runtime behavior.
 
-When building a class combining various components, it’s more natural to use composition than to try to find commonality between them and create a class tree.
+When building a class combining various components, it’s more natural to use composition than
+to try to find commonality between them and create a class tree.
 
-This approach accommodates future requirement changes, that may require a complete restructuring of the class tree in the inheritance approach, more easily. We can simply add a new component to the composited class rather than modifying the superclass to adapt changes.
+This approach accommodates future requirement changes, that may require a complete restructuring
+of the class tree in the inheritance approach, more easily. We can simply add a new component to
+the composited class rather than modifying the superclass to adapt changes.
 
 They’re different in purpose too.
 
@@ -91,7 +103,6 @@ class Car {
         Car(Engine x, string c, int y): e(x), color(c), year(y) {};
         void start() {
             cout <<"Starting"<<endl;
-            //your code goes here
             e.start();
         }
     private:
