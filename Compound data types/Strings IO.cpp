@@ -8,9 +8,13 @@ In our code, the line using namespace std; tells the compiler to use the std (st
 
 The std namespace includes features of the C++ Standard Library
 
-Este comando serve para definir um "espaço de nomes", ou namespace. Um namespace permite a definição de estruturas, estruturas, classes, funções, constantes, etc, que estarão vinculadas a ele. Isso evita duplicidade com, por exemplo, outras implementações com nomes semelhantes. Por definição, a linguagem C++ utiliza o namespace std para definir todas as funções da biblioteca padrão.
+Este comando serve para definir um "espaço de nomes", ou namespace. Um namespace permite
+a definição de estruturas, classes, funções, constantes, etc, que estarão vinculadas a ele.
+Isso evita duplicidade com, por exemplo, outras implementações com nomes semelhantes.
+Por definição, a linguagem C++ utiliza o namespace std para definir todas as funções da biblioteca padrão.
 
-Se não utilizarmos o comando using..., será necessário especificar explicitamente o namespace utilizado, como por exemplo:
+Se não utilizarmos o comando using..., será necessário especificar explicitamente o namespace utilizado,
+como por exemplo:
 
 #include <iostream>
 
@@ -27,8 +31,7 @@ int main()
 // #include <string> // for string class
 using namespace std;
 
-int main()
-{
+int main() {
 
     // Input and Output Functions -------------------------------------------------------------------------
 
@@ -103,10 +106,10 @@ int main()
 
 
 
-//     capacity()	This function returns the capacity allocated to the string, which can be equal to or more than the size of the string. Additional space is allocated so that when the new characters are added to the string, the operations can be done efficiently.
-// resize()	This function changes the size of the string, the size can be increased or decreased.
-// length()	This function finds the length of the string.
-// shrink_to_fit()	This function decreases the capacity of the string and makes it equal to the minimum capacity of the string. This operation is useful to save additional memory if we are sure that no further addition of characters has to be made.
+    // capacity()	This function returns the capacity allocated to the string, which can be equal to or more than the size of the string. Additional space is allocated so that when the new characters are added to the string, the operations can be done efficiently.
+    // resize()	This function changes the size of the string, the size can be increased or decreased.
+    // length()	This function finds the length of the string.
+    // shrink_to_fit()	This function decreases the capacity of the string and makes it equal to the minimum capacity of the string. This operation is useful to save additional memory if we are sure that no further addition of characters has to be made.
 
 
     cout << endl;
@@ -152,11 +155,11 @@ int main()
 
 
 
-//     Function	Definition
-// begin()	This function returns an iterator to the beginning of the string.
-// end()	This function returns an iterator to the end of the string.
-// rbegin()	This function returns a reverse iterator pointing at the end of the string.
-// rend()	This function returns a reverse iterator pointing at beginning of the string.
+    // Function	Definition
+    // begin()	This function returns an iterator to the beginning of the string.
+    // end()	This function returns an iterator to the end of the string.
+    // rbegin()	This function returns a reverse iterator pointing at the end of the string.
+    // rend()	This function returns a reverse iterator pointing at beginning of the string.
 
 
 	// Initializing string`
@@ -186,11 +189,11 @@ int main()
 
     // Manipulating Functions -------------------------------------------------
 
-//     copy(“char array”, len, pos) 	This function copies the substring in the target character array mentioned in its arguments. It takes 3 arguments, target char array, length to be copied, and starting position in the string to start copying.
-// swap()	This function swaps one string with other.
+    // copy(“char array”, len, pos) 	This function copies the substring in the target character array mentioned in its arguments. It takes 3 arguments, target char array, length to be copied, and starting position in the string to start copying.
+    // swap()	This function swaps one string with other.
 
 
-// Initializing 1st string
+    // Initializing 1st string
     string str4 = "geeksforgeeks is for geeks";
   
     // Declaring 2nd string
