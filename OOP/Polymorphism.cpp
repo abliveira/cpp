@@ -66,10 +66,6 @@ These classes are called abstract. They are classes that can only be used as bas
 and thus are allowed to have pure virtual functions.
 It can be used to create pointers and take advantage of all its polymorphic abilities.
 
-
-olhar:  ------------------------------------------------------------------
-https://betterprogramming.pub/inheritance-vs-composition-2fa0cdd2f939
-
 */ 
 
 #include<iostream>

@@ -23,7 +23,7 @@ A destructor function is called automatically when the object goes out of scope:
 (2) the program ends 
 (3) a block containing local variables ends 
 (4) a delete operator is called  
-They are declared in the same way of constructors, but using ~ befores its name.
+They are declared in the same way of constructors, but using ~ before its name.
 
 Destructors can be very useful for releasing resources before coming out of the program. 
 This can include closing files, releasing memory, and so on.

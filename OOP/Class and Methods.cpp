@@ -54,7 +54,7 @@ class MyClass1 {        // The class
 };
 
 /*To define a function outside the class definition, you have to declare it inside the
-class and then define it outside of the class. This is done by specifiying the name
+class and then define it outside of the class. This is done by specifying the name
 of the class, followed the scope resolution :: operator, followed by the name of the 
 function:*/
 

@@ -22,7 +22,7 @@ int main () {
     srand(2);
     cout << 1 + (rand()) << endl;
     
-    // No entando, os valores ainda são previsíveis
+    // No entanto, os valores ainda são previsíveis
     cout << "This value is 2: " << (1 + rand() % 6) << endl;
     
     //  Para gerar valores realmente aleatórios, pode-se usar a biblioteca ctime para input da seed

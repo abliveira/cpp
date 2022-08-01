@@ -130,7 +130,7 @@ class Student: private Person // Especifica que o que será herdado será privad
     int fee;
      
     public:
-        void set_s(); // Apenas como exemplo, os métodos da classe estão declados externamente
+        void set_s(); // Apenas como exemplo, os métodos da classe estão declarados externamente
         void display_s();
 };
  
@@ -235,7 +235,7 @@ In the above example, both ClassB and ClassC inherit ClassA, they both have a si
 However Class-D inherits both ClassB and ClassC, therefore Class-D has two copies of ClassA,
 one from ClassB and another from ClassC. 
 If we need to access the data member of ClassA through the object of Class-D, we must specify the path
-from which a will be accessed, whether it is from ClassB or ClassC, bcoz compiler can’t differentiate
+from which a will be accessed, whether it is from ClassB or ClassC, because compiler can’t differentiate
 between two copies of ClassA in Class-D.
 */
 class ClassA {

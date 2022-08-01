@@ -6,7 +6,7 @@ using namespace std;
 
 // Obs: Esse recurso é exclusivo de C++
 
-// Se definido um argumento padrão, todos os subsequentes também devem ter valores padrôes
+// Se definido um argumento padrão, todos os subsequentes também devem ter valores padrões
 int sum(int x = 0, int y = 0, int z = 0, int w = 0) { 
     return (x + y + z + w); 
 } 
