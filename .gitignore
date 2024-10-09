@@ -1,0 +1,7 @@
+# IDE/editor files
+.vscode/
+
+# C/C++ files
+*.o
+*.out
+*.exe
